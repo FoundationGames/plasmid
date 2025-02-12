@@ -2,17 +2,13 @@ package xyz.nucleoid.plasmid.mixin.game.rule;
 
 import net.minecraft.network.ClientConnection;
 import net.minecraft.network.packet.c2s.play.ClickSlotC2SPacket;
-import net.minecraft.network.packet.s2c.play.PlaySoundS2CPacket;
 import net.minecraft.network.packet.s2c.play.ScreenHandlerSlotUpdateS2CPacket;
-import net.minecraft.registry.Registries;
 import net.minecraft.screen.PlayerScreenHandler;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ConnectedClientData;
 import net.minecraft.server.network.ServerCommonNetworkHandler;
 import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.util.ActionResult;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;

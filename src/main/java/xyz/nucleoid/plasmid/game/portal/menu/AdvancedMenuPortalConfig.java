@@ -14,7 +14,6 @@ import xyz.nucleoid.plasmid.game.portal.GamePortalBackend;
 import xyz.nucleoid.plasmid.game.portal.GamePortalConfig;
 import xyz.nucleoid.plasmid.util.PlasmidCodecs;
 
-import java.util.Collections;
 import java.util.List;
 
 public record AdvancedMenuPortalConfig(

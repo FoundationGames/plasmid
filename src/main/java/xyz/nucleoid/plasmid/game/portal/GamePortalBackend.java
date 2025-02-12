@@ -7,9 +7,7 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
-import org.jetbrains.annotations.Nullable;
 import xyz.nucleoid.plasmid.game.GameSpace;
-import xyz.nucleoid.plasmid.game.portal.GamePortal.GuiProvider;
 
 import java.util.Collections;
 import java.util.List;

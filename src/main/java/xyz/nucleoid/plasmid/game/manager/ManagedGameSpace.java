@@ -18,9 +18,9 @@ import xyz.nucleoid.plasmid.game.config.GameConfig;
 import xyz.nucleoid.plasmid.game.event.GameActivityEvents;
 import xyz.nucleoid.plasmid.game.event.GamePlayerEvents;
 import xyz.nucleoid.plasmid.game.player.JoinAcceptorResult;
+import xyz.nucleoid.plasmid.game.player.JoinOfferResult;
 import xyz.nucleoid.plasmid.game.player.LocalJoinAcceptor;
 import xyz.nucleoid.plasmid.game.player.LocalJoinOffer;
-import xyz.nucleoid.plasmid.game.player.JoinOfferResult;
 
 import java.util.Map;
 import java.util.function.Consumer;

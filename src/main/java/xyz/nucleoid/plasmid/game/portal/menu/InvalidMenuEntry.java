@@ -5,12 +5,10 @@ import net.minecraft.item.Items;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
-import xyz.nucleoid.plasmid.game.GameSpace;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-import java.util.concurrent.CompletableFuture;
 
 public record InvalidMenuEntry(Text name) implements MenuEntry {
     private static final Text DEFAULT_NAME = Text.translatable("text.plasmid.ui.game_join.invalid.name").formatted(Formatting.RED);

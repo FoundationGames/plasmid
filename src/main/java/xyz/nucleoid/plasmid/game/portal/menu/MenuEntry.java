@@ -2,7 +2,6 @@ package xyz.nucleoid.plasmid.game.portal.menu;
 
 import eu.pb4.sgui.api.elements.GuiElement;
 import eu.pb4.sgui.api.elements.GuiElementBuilder;
-import jdk.jfr.Experimental;
 import net.minecraft.item.ItemStack;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.server.network.ServerPlayerEntity;

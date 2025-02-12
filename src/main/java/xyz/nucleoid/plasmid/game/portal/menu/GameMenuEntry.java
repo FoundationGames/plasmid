@@ -1,14 +1,14 @@
 package xyz.nucleoid.plasmid.game.portal.menu;
 
-import java.util.List;
-import java.util.function.Consumer;
-
 import net.minecraft.item.ItemStack;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import xyz.nucleoid.plasmid.game.GameSpace;
 import xyz.nucleoid.plasmid.game.portal.GamePortalBackend;
 import xyz.nucleoid.plasmid.game.portal.game.ConcurrentGamePortalBackend;
+
+import java.util.List;
+import java.util.function.Consumer;
 
 public record GameMenuEntry(
         ConcurrentGamePortalBackend game,

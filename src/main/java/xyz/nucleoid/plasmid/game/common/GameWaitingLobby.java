@@ -1,6 +1,5 @@
 package xyz.nucleoid.plasmid.game.common;
 
-import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.boss.BossBar;
 import net.minecraft.screen.ScreenTexts;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -28,7 +27,6 @@ import xyz.nucleoid.plasmid.game.rule.GameRuleType;
 import xyz.nucleoid.plasmid.util.compatibility.AfkDisplayCompatibility;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 /**

@@ -1,9 +1,8 @@
 package xyz.nucleoid.plasmid.util.compatibility;
 
+import io.github.beabfc.afkdisplay.AfkPlayer;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.server.network.ServerPlayerEntity;
-
-import io.github.beabfc.afkdisplay.AfkPlayer;
 
 public final class AfkDisplayCompatibility {
     private static final boolean ENABLED = FabricLoader.getInstance().isModLoaded("afkdisplay");

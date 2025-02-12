@@ -3,7 +3,6 @@ package xyz.nucleoid.plasmid.game;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import org.jetbrains.annotations.Nullable;
 import xyz.nucleoid.fantasy.RuntimeWorldConfig;
 import xyz.nucleoid.plasmid.game.event.GameActivityEvents;
 import xyz.nucleoid.plasmid.game.event.GamePlayerEvents;

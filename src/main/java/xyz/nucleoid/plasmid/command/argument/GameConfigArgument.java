@@ -4,10 +4,8 @@ import com.mojang.brigadier.builder.RequiredArgumentBuilder;
 import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
-import com.mojang.datafixers.util.Pair;
 import net.minecraft.command.CommandSource;
 import net.minecraft.command.argument.IdentifierArgumentType;
-import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.server.command.CommandManager;
@@ -18,8 +16,6 @@ import xyz.nucleoid.plasmid.game.config.GameConfig;
 import xyz.nucleoid.plasmid.game.config.GameConfigs;
 
 import java.util.Locale;
-import java.util.Optional;
-import java.util.function.Function;
 
 public final class GameConfigArgument {
     private static final DynamicCommandExceptionType GAME_NOT_FOUND = new DynamicCommandExceptionType(id ->

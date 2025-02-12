@@ -5,7 +5,6 @@ import com.mojang.serialization.Codec;
 import eu.pb4.placeholders.api.TextParserUtils;
 import net.minecraft.text.Text;
 import net.minecraft.text.TextCodecs;
-import net.minecraft.util.dynamic.Codecs;
 
 import java.util.function.Function;
 

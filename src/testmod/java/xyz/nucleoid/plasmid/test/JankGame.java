@@ -12,6 +12,7 @@ import net.minecraft.network.packet.c2s.play.PlayerMoveC2SPacket;
 import net.minecraft.network.packet.c2s.play.VehicleMoveC2SPacket;
 import net.minecraft.network.packet.s2c.play.*;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.server.network.EntityTrackerEntry;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
@@ -21,7 +22,10 @@ import net.minecraft.world.GameRules;
 import xyz.nucleoid.fantasy.RuntimeWorldConfig;
 import xyz.nucleoid.map_templates.BlockBounds;
 import xyz.nucleoid.map_templates.MapTemplate;
-import xyz.nucleoid.plasmid.game.*;
+import xyz.nucleoid.plasmid.game.GameOpenContext;
+import xyz.nucleoid.plasmid.game.GameOpenProcedure;
+import xyz.nucleoid.plasmid.game.GameResult;
+import xyz.nucleoid.plasmid.game.GameSpace;
 import xyz.nucleoid.plasmid.game.common.GameWaitingLobby;
 import xyz.nucleoid.plasmid.game.common.GlobalWidgets;
 import xyz.nucleoid.plasmid.game.common.config.PlayerConfig;
@@ -74,7 +78,7 @@ public final class JankGame {
             activity.deny(GameRuleType.THROW_ITEMS).deny(GameRuleType.MODIFY_INVENTORY);
 
             activity.listen(PlayerDeathEvent.EVENT, (player, source) -> {
-                player.teleport(0.0, 65.0, 0.0);
+                player.setPos(0.0, 65.0, 0.0);
                 return ActionResult.FAIL;
             });
 
@@ -111,16 +115,18 @@ public final class JankGame {
                 //SidebarUtils.updateTexts(player.networkHandler, sidebar);
             };
 
+            var world = gameSpace.getWorlds().iterator().next();
+
             activity.listen(PlayerDeathEvent.EVENT, (player, source) -> {
-                player.teleport(0.0, 65.0, 0.0);
+                player.setPos(0.0, 65.0, 0.0);
                 return ActionResult.FAIL;
             });
             var mover = new ArmorStandEntity(gameSpace.getWorlds().iterator().next(), 0.0, 65.0, 0.0);
             gameSpace.getWorlds().iterator().next().spawnEntity(mover);
 
             activity.listen(GamePlayerEvents.ADD, player -> {
-                player.networkHandler.sendPacket(FAKE_BOAT.createSpawnPacket());
-                player.networkHandler.sendPacket(CAMERA.createSpawnPacket());
+                player.networkHandler.sendPacket(FAKE_BOAT.createSpawnPacket(new EntityTrackerEntry(world, FAKE_BOAT, 1, false, player.networkHandler::sendPacket)));
+                player.networkHandler.sendPacket(CAMERA.createSpawnPacket(new EntityTrackerEntry(world, CAMERA, 1, false, player.networkHandler::sendPacket)));
                 player.networkHandler.sendPacket(new EntityTrackerUpdateS2CPacket(FAKE_BOAT.getId(), FAKE_BOAT.getDataTracker().getChangedEntries()));
                 player.networkHandler.sendPacket(new EntityTrackerUpdateS2CPacket(CAMERA.getId(), CAMERA.getDataTracker().getChangedEntries()));
                 player.networkHandler.sendPacket(VirtualEntityUtils.createRidePacket(FAKE_BOAT.getId(), IntList.of(player.getId())));

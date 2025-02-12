@@ -1,6 +1,5 @@
 package xyz.nucleoid.plasmid.game.portal;
 
-import net.fabricmc.fabric.api.util.NbtType;
 import net.minecraft.nbt.NbtCompound;
 import net.minecraft.nbt.NbtElement;
 import net.minecraft.server.network.ServerPlayerEntity;
@@ -30,7 +29,7 @@ public interface GamePortalInterface {
     @Nullable
     default Identifier deserializePortalId(NbtCompound root) {
         if (root.contains(NBT_KEY, NbtElement.STRING_TYPE)) {
-            return new Identifier(root.getString(NBT_KEY));
+            return Identifier.of(root.getString(NBT_KEY));
         }
         return null;
     }

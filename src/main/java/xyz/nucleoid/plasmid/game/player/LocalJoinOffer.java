@@ -5,7 +5,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 
-import java.util.*;
+import java.util.Collection;
+import java.util.Set;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public record LocalJoinOffer(Collection<ServerPlayerEntity> serverPlayers, JoinIntent intent) implements JoinOffer {

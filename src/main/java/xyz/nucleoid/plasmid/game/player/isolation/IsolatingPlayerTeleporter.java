@@ -113,7 +113,7 @@ public final class IsolatingPlayerTeleporter {
 
         BlockMapper.resetMapper(player);
 
-        world.onPlayerTeleport(player);
+        world.onDimensionChanged(player);
         networkHandler.requestTeleport(player.getX(), player.getY(), player.getZ(), player.getYaw(), player.getPitch());
         networkHandler.sendPacket(new DifficultyS2CPacket(worldProperties.getDifficulty(), worldProperties.isDifficultyLocked()));
         networkHandler.sendPacket(new UpdateSelectedSlotS2CPacket(player.getInventory().selectedSlot));

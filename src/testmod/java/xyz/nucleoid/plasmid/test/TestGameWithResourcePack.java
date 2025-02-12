@@ -34,7 +34,7 @@ import xyz.nucleoid.plasmid.game.world.generator.TemplateChunkGenerator;
 import xyz.nucleoid.stimuli.event.player.PlayerDeathEvent;
 
 public final class TestGameWithResourcePack {
-    private static final StatisticKey<Double> TEST_KEY = StatisticKey.doubleKey(new Identifier(Plasmid.ID, "test_rp"));
+    private static final StatisticKey<Double> TEST_KEY = StatisticKey.doubleKey(Identifier.of(Plasmid.ID, "test_rp"));
 
     private static final GameTeam TEAM = new GameTeam(
             new GameTeamKey("players"),
@@ -67,7 +67,7 @@ public final class TestGameWithResourcePack {
             activity.deny(GameRuleType.THROW_ITEMS).deny(GameRuleType.MODIFY_INVENTORY);
 
             activity.listen(PlayerDeathEvent.EVENT, (player, source) -> {
-                player.teleport(0.0, 65.0, 0.0);
+                player.setPos(0.0, 65.0, 0.0);
                 return ActionResult.FAIL;
             });
 
@@ -127,7 +127,7 @@ public final class TestGameWithResourcePack {
             });
 
             activity.listen(PlayerDeathEvent.EVENT, (player, source) -> {
-                player.teleport(0.0, 65.0, 0.0);
+                player.setPos(0.0, 65.0, 0.0);
                 return ActionResult.FAIL;
             });
 

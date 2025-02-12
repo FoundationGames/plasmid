@@ -1,7 +1,6 @@
 package xyz.nucleoid.plasmid.game.common;
 
 import com.google.common.hash.Hashing;
-import eu.pb4.polymer.resourcepack.api.PolymerResourcePackUtils;
 import eu.pb4.polymer.resourcepack.api.ResourcePackCreator;
 import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.network.packet.s2c.common.ResourcePackRemoveS2CPacket;
@@ -10,7 +9,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
 import xyz.nucleoid.plasmid.Plasmid;
-import xyz.nucleoid.plasmid.PlasmidConfig;
 import xyz.nucleoid.plasmid.PlasmidWebServer;
 import xyz.nucleoid.plasmid.game.GameActivity;
 import xyz.nucleoid.plasmid.game.event.GamePlayerEvents;
@@ -18,7 +16,6 @@ import xyz.nucleoid.plasmid.game.event.GamePlayerEvents;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Path;
-import java.util.HashMap;
 import java.util.Optional;
 import java.util.UUID;
 
